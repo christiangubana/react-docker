@@ -2,6 +2,7 @@ services:
   frontend:
     build:
       context: .
+      dockerfile: ./Dockerfile
       target: dev-envs
     container_name: frontend
     ports:
