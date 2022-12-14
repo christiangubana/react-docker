@@ -1,68 +1,13 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
+import React from 'react';
+import AppProvider from "./providers/app";
+import AppRoutes from "./routes";
 
-function App() {
-  const [loading, setLoading] = useState(false);
-  const [champions, setChampions] = useState([]);
-  const [error, setError] = useState(Error());
-
-  useEffect(() => {
-    const loadChampions = async () => {
-      try {
-      setLoading(true);
-      const response = await fetch("https://ergast.com/api/f1.json");
-      const data = await response.json();
-      setChampions(data.MRData.RaceTable.Races);
-      setLoading(false);
-      } catch (e) {
-        setError(e);
-        console.error(Error(e.message ?? e))
-      }
-    };
-    loadChampions();
-  }, []);
+const App = () => {
   return (
-    <div className="App">
-      <div className="App-header">
-        <h1>F1 Champions</h1>
-        <p style={{ color: "red" }}>{error.message}</p>
-        {loading ? (
-          <h4>Loading...</h4>
-        ) : (
-          Object.values(champions).map((item, index) => {
-            return (
-             <table key={index} className="table-data">
-              <thead>
-                <tr>
-                <th>Race Name</th>
-                <th>Season</th>
-                <th>Country</th>
-                <th>Round</th>
-                <th>Circuit Name</th>
-                <th>Data</th>
-                </tr>
-              </thead>
-              <tbody>
-               <tr>
-               <td>{item.raceName}</td>
-                <td>{item.season}</td>
-                <td>{item.Circuit.Location.country}</td>
-                <td>{item.round}</td>
-                <td>{item.Circuit.circuitName}</td>
-                <td>{item.date}</td>
-               </tr>
-              </tbody>
-             </table>
-            );
-          })
-        )}
-      </div>
-    </div>
+    <AppProvider>
+      <AppRoutes />
+    </AppProvider>
   );
-}
+};
 
 export default App;
-
-// https://ergast.com/api/f1/2005/last.json
-
-// https://ergast.com/api/f1.json
