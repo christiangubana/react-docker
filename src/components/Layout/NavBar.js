@@ -10,7 +10,7 @@ export default function NavBar() {
     <div>
       <nav className="navbar" onClick={(e) => e.stopPropagation()}>
         <NavLink exact to="/" className="nav-logo">
-          F1 Champions
+        F1 world champions starting from 2005 until now
         </NavLink>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">

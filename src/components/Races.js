@@ -181,7 +181,7 @@ const Races = () => {
     return (
       <>
         <YearFilter />
-        <Typography variant="h5" className="text-center mb-8">{`${year} Race Schedule`}</Typography>
+        <Typography variant="h5" className="text-center mb-8">{`World champions year of ${year}`}</Typography>
         <GenericTable rows={raceRows} columns={columns}></GenericTable>;
       </>
     );
