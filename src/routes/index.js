@@ -17,7 +17,9 @@ const AppRoutes = () => {
   return (
     <>
       <NavBar />
+      {!element ? <h1 style={{textAlign: 'center'}}>Loading...</h1> : 
       <div className="pages-content">{element}</div>
+      }
     </>
   );
 };
