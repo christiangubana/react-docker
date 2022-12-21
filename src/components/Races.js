@@ -180,8 +180,10 @@ const Races = () => {
 
     return (
       <>
+        <div className='side-content'>
         <YearFilter />
-        <Typography variant="h5" className="text-center mb-8">{`World champions year of ${year}`}</Typography>
+        <Typography variant="h5" className="title">{`World champions year of ${year}`}</Typography>
+        </div>
         <GenericTable rows={raceRows} columns={columns}></GenericTable>;
       </>
     );

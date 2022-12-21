@@ -32,7 +32,7 @@ function YearFilter() {
   const theme = useTheme();
 
   const thisYear = new Date().getFullYear();
-  const filterSize = thisYear - 1950;
+  const filterSize = thisYear - 2005;
   const yearArray = Array(filterSize)
     .fill(0)
     .map((e, i) => i + 2005 + '');
@@ -45,8 +45,8 @@ function YearFilter() {
   };
 
   return (
-    <div className='mt-28'>
-      <FormControl className="mt-16 w-48 mb-8 ml-8 md:ml-32 md:w-60">
+    <div className='form-filter'>
+      <FormControl>
         <InputLabel id="demo-multiple-name-label">Year</InputLabel>
         <Select
           id="demo-multiple-name"

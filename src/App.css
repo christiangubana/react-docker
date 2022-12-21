@@ -4,7 +4,51 @@
   padding: 0;
 }
 
-.pages-content {
-  background-color: azure;
-  margin: 10px;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+.date {
+  display: flex;
+  flex-direction: column;
+  width: 4.2rem;
+  height: 4.2rem;
+  border: 1px solid #ececec;
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.date__month {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.date__day {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.pages-content {
+  margin-top: 28px;
+}
+
+.side-content {
+  display: block;
+  text-align: center;
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+  padding-right: 60px !important;
+}
+
+.css-1ex1afd-MuiTableCell-root {
+  width: 30px;
+} 
