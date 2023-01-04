@@ -44,27 +44,30 @@ body {
 .css-ahj2mt-MuiTypography-root {
   font-size: small;
 }
-.css-1ygcj2i-MuiTableCell-root, .css-rfbarq-MuiInputBase-root-MuiOutlinedInput-root,.css-i4bv87-MuiSvgIcon-root {
+.css-1ygcj2i-MuiTableCell-root,
+.css-rfbarq-MuiInputBase-root-MuiOutlinedInput-root,
+.css-i4bv87-MuiSvgIcon-root {
   color: #fff;
 }
-.css-16hhy4j-MuiFormLabel-root-MuiInputLabel-root, .css-14td8qq-MuiButtonBase-root-MuiTab-root {
-  color: #fff
+.css-16hhy4j-MuiFormLabel-root-MuiInputLabel-root,
+.css-14td8qq-MuiButtonBase-root-MuiTab-root {
+  color: #fff;
 }
 .css-ke5b6m-MuiButtonBase-root-MuiButton-root {
-  text-transform:capitalize;
+  text-transform: capitalize;
 }
 .pages-content {
   margin-top: 28px;
 }
 
-.headers {
+.headers,
+.loading {
   display: block;
   text-align: center;
   color: #fff;
 }
-
 .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
-  background-color: #FF0056;
+  background-color: #ff0056;
   padding-right: 60px !important;
 }
 
@@ -85,4 +88,13 @@ a:link {
 }
 a:hover {
   text-decoration: none;
+}
+.MuiCircularProgress-colorPrimary {
+  color: #fff !important;
+}
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 48%;
+  margin: -50px 0px 0px -50px;
 }
