@@ -45,9 +45,9 @@ function YearFilter() {
   };
 
   return (
-    <div className='form-filter'>
+    <div>
       <FormControl>
-        <InputLabel id="demo-multiple-name-label">Year</InputLabel>
+        <InputLabel id="year-select-demo" xs={{ width: 600}}>Year</InputLabel>
         <Select
           id="demo-multiple-name"
           value={year}
