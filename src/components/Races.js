@@ -6,15 +6,15 @@ import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { Typography } from "@mui/material";
+import { CircularProgress, Typography } from "@mui/material";
 import CollapsibleTable from "./Tables/CollapseTable";
 import DateCard from "./Date/DateCard";
 import { convertDate, convertTimeZone } from "../util/DateConverter";
 import YearFilter from "./YearSelect/YearFilter";
 import YearContext from "./context/YearContext";
 import { Link } from "react-router-dom";
-import Button from '@mui/material/Button';
-
+import Button from "@mui/material/Button";
+import { Stack } from "@mui/system";
 
 const lookup = require("coordinate_to_country");
 
@@ -106,11 +106,9 @@ const RaceRow = ({ race, latest, passed }) => {
           </IconButton>
         </TableCell>
         <TableCell>
-          <div
-            className="table-data"
-            ref={latest ? latestRaceRef : undefined}
-          >
-            <img crossOrigin="anonymous"
+          <div className="table-data" ref={latest ? latestRaceRef : undefined}>
+            <img
+              crossOrigin="anonymous"
               className="flag-images"
               src={`https://countryflagsapi.com/png/${lookup(
                 +race.Circuit.Location.lat,
@@ -126,7 +124,10 @@ const RaceRow = ({ race, latest, passed }) => {
               </Typography>
               {passed && (
                 <Link to={`/results/${race.season}/${race.round}`}>
-                  <Button variant="contained" color="success"> Results </Button>
+                  <Button variant="contained" color="success">
+                    {" "}
+                    Results{" "}
+                  </Button>
                 </Link>
               )}
             </div>
@@ -147,8 +148,12 @@ const Races = () => {
   const { year } = useContext(YearContext);
   const racesQuery = useRaces(year);
 
+  console.log(racesQuery.isFetching);
+  console.log(racesQuery);
+
   if (racesQuery.isSuccess) {
     const rows = racesQuery.data.data.MRData.RaceTable.Races;
+
     //User is viewing current seasons page.
     if (year === new Date().getFullYear()) {
       let latest = -1;
@@ -185,16 +190,22 @@ const Races = () => {
 
     return (
       <>
-        <div>
-          <div className="headers">
-            <YearFilter />
-            <Typography
-              variant="h5"
-              className="title"
-            >{`World champions year of ${year}`}</Typography>
-          </div>
-          <GenericTable rows={raceRows} columns={columns}></GenericTable>;
+        <div className="headers">
+          <YearFilter />
+          <Typography
+            variant="h5"
+            className="title"
+          >{`World champions year of ${year}`}</Typography>
         </div>
+        <GenericTable rows={raceRows} columns={columns}></GenericTable>;
+      </>
+    );
+  } else if (racesQuery.isLoading || !racesQuery.isSuccess) {
+    return (
+      <>
+        <Stack className="loading" style={{padding:'50px'}}>
+          <CircularProgress size={80} thickness={1} />
+        </Stack>
       </>
     );
   }
