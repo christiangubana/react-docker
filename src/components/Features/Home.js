@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 function Home() {
   const [loading, setLoading] = useState(false);
   const [champions, setChampions] = useState([]);
-  const [error, setError] = useState(Error());
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const loadChampions = async () => {

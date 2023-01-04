@@ -9,8 +9,8 @@ import React from 'react';
 
 function GenericTable({ rows, columns }) {
   return (
-    <TableContainer className='w-full'>
-      <Table className='max-w-3xl m-auto'>
+    <TableContainer>
+      <Table>
         <TableHead>
           <TableRow>
             <TableCell />
