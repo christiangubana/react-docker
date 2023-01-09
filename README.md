@@ -6,7 +6,7 @@
 
 ```cd in f1-champ```
 
-### The project deploy React Application with Nginx
+### The project deploy React Application with Docker
 
 Project structure:
 
