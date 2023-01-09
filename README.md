@@ -1,12 +1,11 @@
-## Compose sample application
+## ReactjS Nginx Docker
 
-### Use with Docker Development Environments
+### How to run the application with Docker
 
-You can open this sample in the Dev Environments feature of Docker Desktop version 4.12 or later.
+```clone the directory at git@github.com:christiangubana/f1-champ.git```
+```cd in f1-champ```
 
-[Open in Docker Dev Environments <img src="../open_in_new.svg" alt="Open in Docker Dev Environments" align="top"/>](https://open.docker.com/dashboard/dev-envs?url=https://github.com/docker/awesome-compose/tree/master/react-nginx)
-
-### An project deploy React Application with Nginx
+### The project deploy React Application with Nginx
 
 Project structure:
 
@@ -92,3 +91,29 @@ Stopping frontend ... done
 Removing frontend ... done
 Removing network react-nginx_default
 ```
+
+### How to run the application locally without Docker
+
+* clone the directory at git@github.com:christiangubana/f1-champ.git
+* cd in f1-champ
+* npm install
+* npm start
+
+After the application start, navigate to http://localhost:3000 in your browser
+
+### Tool used
+Language: JavaScript Library: React.Js
+
+UI-library: Material ui
+
+Deployment: Docker
+
+Web-server: Nginx
+
+IDE: Visual Studio
+
+OS: Windows 10 Pro 64-bit
+
+### Thanks
+Thank you very much for your time and consideration, and have a terric day.
+
