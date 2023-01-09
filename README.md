@@ -3,9 +3,10 @@
 ### How to run the application with Docker
 
 ```clone the directory at git@github.com:christiangubana/f1-champ.git```
+
 ```cd in f1-champ```
 
-### The project deploy React Application with Nginx
+### The project deploy React Application with Docker
 
 Project structure:
 
