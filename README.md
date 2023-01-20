@@ -115,6 +115,4 @@ IDE: Visual Studio
 
 OS: Windows 10 Pro 64-bit
 
-### Thanks
-Thank you very much for your time and consideration, and have a terric day.
 
